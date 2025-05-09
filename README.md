@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Fitness-website
 
 ![Screenshot (70)](https://user-images.githubusercontent.com/100989693/202890088-dc2c4975-889d-41af-8fbd-dd8b6c05194b.png)
@@ -7,3 +8,7 @@
 
 
 Here I created front(home) page of a Fitness-Gym Website using HTML, CSS and JavaScript. Still working on otherpages upload it soon, till then check this out. Hope you like it. Thank you. 
+=======
+# Gym-Fitness
+A simple, multi-page Gym &amp; Fitness website built using HTML, CSS, and JavaScript, designed for beginners to understand layout, forms, styling, and DOM interaction.
+>>>>>>> ee4bbfbb6196195bb95852883587f912c01ad0aa
