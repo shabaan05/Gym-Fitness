@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #eee;
+    padding: 20px;
+  }
+  
+  .navbar {
+    background-color: #000;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar .logo {
+    width: 140px;
+  }
+  
+  .navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  
+  .navbar nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+  }
+  
+  .navbar nav ul li a:hover {
+    color: #12adb8;
+  }
+  
+  .services-section {
+    max-width: 800px;
+    margin: 60px auto;
+  }
+  
+  .services-section h1 {
+    text-align: center;
+    color: #12adb8;
+    margin-bottom: 40px;
+    font-size: 32px;
+  }
+  
+  .service {
+    margin-bottom: 30px;
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #12adb8;
+  }
+  
+  .toggle-btn {
+    width: 100%;
+    padding: 20px;
+    background-color: #0f98a3;
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  .toggle-btn:hover {
+    background-color: #12adb8;
+  }
+  
+  .service-content {
+    padding: 20px;
+    background-color: #111;
+    color: #eee;
+    border-top: 1px solid #12adb8;
+  }
+  
+  /* Form Inputs */
+  input, button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #555;
+    background-color: #222;
+    color: white;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #12adb8;
+  }
+  
+  .btn {
+    background-color: #0f98a3;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .btn:hover {
+    background-color: #12adb8;
+  }
+  
+  .result-box {
+    margin-top: 15px;
+    background-color: #1c1c1c;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #12adb8;
+  }
+  

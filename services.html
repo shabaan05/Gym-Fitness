@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Services</title>
+  <link rel="stylesheet" href="services.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <img src="logo-white.png" alt="Logo" class="logo" />
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="services-section">
+    <h1>Our Fitness Services</h1>
+
+    <!-- BMI Calculator Section -->
+    <div class="service">
+      <button class="toggle-btn">BMI Calculator</button>
+      <div class="service-content">
+        <form id="bmiForm">
+          <input type="number" id="weight" placeholder="Weight (kg)" required />
+          <input type="number" id="height" placeholder="Height (cm)" required />
+          <button type="submit" class="btn">Calculate BMI</button>
+        </form>
+        <div id="bmiResult" class="result-box"></div>
+        <div id="dietAdvice" class="result-box"></div>
+        <div id="exercisePlan" class="result-box"></div>
+      </div>
+    </div>
+
+    <!-- Diet Plan -->
+    <div class="service">
+      <button class="toggle-btn">Diet Plan</button>
+      <div class="service-content">
+        <p>Choose from muscle-building or fat-loss meal plans. Each plan is crafted to match your goal with proper protein, carbs, and hydration.</p>
+      </div>
+    </div>
+
+    <!-- Weight Training -->
+    <div class="service">
+      <button class="toggle-btn">Weight Training</button>
+      <div class="service-content">
+        <p>Train with compound lifts: squats, bench press, deadlifts, and shoulder press. Progressive overload and proper form are key for gains.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    $(document).ready(function () {
+      $(".service-content").hide();
+      $(".toggle-btn").click(function () {
+        $(this).next(".service-content").slideToggle(500);
+      });
+
+      $("#bmiForm").submit(function (e) {
+        e.preventDefault();
+        // Prevents the form from reloading the page when submitted.
+
+
+
+
+        const weight = parseFloat($("#weight").val());
+        const height = parseFloat($("#height").val()) / 100;
+
+        if (isNaN(weight) || isNaN(height) || height === 0) {
+          $("#bmiResult").html("<p>Please enter valid numbers.</p>");
+          return;
+        }
+
+        const bmi = (weight / (height * height)).toFixed(1);  // it rounds to 1 decimal
+        let advice = "";
+        let exercises = "";
+
+        if (bmi < 18.5) {
+          advice = "You are underweight. Focus on a calorie-surplus diet with high-protein meals.";
+          exercises = "Light strength training, full-body workouts, and compound movements like squats and rows.";
+        } else if (bmi >= 18.5 && bmi < 25) {
+          advice = "You have a healthy BMI. Maintain a balanced diet with lean protein, vegetables, and carbs.";
+          exercises = "Split routines (push/pull/legs), progressive overload, and 4-5 days/week gym schedule.";
+        } else if (bmi >= 25 && bmi < 30) {
+          advice = "You are overweight. Reduce sugar and carbs, increase protein and water intake.";
+          exercises = "Cardio + strength training combo: treadmill, cycling, resistance workouts.";
+        } else {
+          advice = "You are obese. Follow a strict calorie-deficit diet under supervision.";
+          exercises = "Low-impact cardio (walking, swimming), bodyweight training, and professional guidance.";
+        }
+
+        $("#bmiResult").html(`<p><strong>Your BMI:</strong> ${bmi}</p>`);
+        $("#dietAdvice").html(`<p><strong>Diet Advice:</strong> ${advice}</p>`);
+        $("#exercisePlan").html(`<p><strong>Exercise Plan:</strong> ${exercises}</p>`);
+      });
+    });
+  </script>
+</body>
+</html>
